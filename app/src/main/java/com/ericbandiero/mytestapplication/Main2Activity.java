@@ -10,6 +10,7 @@ import android.view.View;
 public class Main2Activity extends AppCompatActivity {
 	//We only need this.
 	//Change with no fast
+	//Change with fast forward
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
