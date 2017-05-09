@@ -8,7 +8,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 public class Main2Activity extends AppCompatActivity {
-	//Change in master branch
 	//We only need this.
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
