@@ -9,6 +9,7 @@ import android.view.View;
 
 public class Main2Activity extends AppCompatActivity {
 	//We only need this.
+	//Change with no fast
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
