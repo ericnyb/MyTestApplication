@@ -12,7 +12,8 @@ public class Main2Activity extends AppCompatActivity {
 	//Change with no fast
 	//Change with fast forward
 	//Change and used merge commit
-	//Change 2 master
+	//T2 commit
+	//T2 change 2
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
