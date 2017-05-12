@@ -6,6 +6,8 @@ package com.ericbandiero.mytestapplication;
  * Added new feature that we push to remote.
  * Will add another pull request.
  * New note - committed but not pushed.
+ * New pull try!
+ * Pull request redo
  */
 
 class AppConstant {
