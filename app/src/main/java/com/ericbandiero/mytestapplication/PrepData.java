@@ -12,6 +12,7 @@ import java.util.Map;
 
 /**
  * Created by ${"Eric Bandiero"} on 4/9/2017.
+ * Interface to prepare data.
  */
 
 public class PrepData implements IPrepDataExpandableList {
