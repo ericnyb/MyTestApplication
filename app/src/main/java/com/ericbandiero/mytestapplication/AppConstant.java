@@ -5,7 +5,7 @@ package com.ericbandiero.mytestapplication;
  * Our app - will not merge this yet.
  * Added new feature that we push to remote.
  * Will add another pull request.
- * New note - commited but not pushed.
+ * New note - committed but not pushed.
  */
 
 class AppConstant {
