@@ -9,6 +9,7 @@ package com.ericbandiero.mytestapplication;
  * Minor change 4
  * Minor change 5
  * Minor change 6
+ * Minor change 7
  */
 
 class AppConstant {
