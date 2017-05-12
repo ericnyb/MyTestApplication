@@ -7,6 +7,7 @@ package com.ericbandiero.mytestapplication;
  * Minor change 2
  * Minor change 3 to pick above 2 will be squashed.
  * Minor change 4
+ * Minor change 5
  */
 
 class AppConstant {
