@@ -7,6 +7,7 @@ package com.ericbandiero.mytestapplication;
  * Will add another pull request.
  * New note - committed but not pushed.
  * New pull try!
+ * Pull request redo
  */
 
 class AppConstant {
