@@ -58,6 +58,10 @@ public class MainActivity extends AppCompatActivity implements Serializable{
 	SharedPreferences sharedPreferences;
 
 	@Inject MyDaggerObject myDaggerObject;
+	@Inject MyDaggerObject2 myDaggerObject2;
+
+
+
 
 	//Butterknife
 	@BindView(R.id.lvExp) ExpandableListView expListView;
@@ -79,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements Serializable{
 
 		System.out.println("Shared preferences file:"+sharedPreferences.getClass().getName());
 		System.out.println("User name:"+myDaggerObject.getUserName());
+		System.out.println("User name:"+myDaggerObject2.getUserName());
 
 		/*
 		fab.setOnClickListener(new View.OnClickListener() {
