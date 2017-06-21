@@ -9,8 +9,8 @@ import dagger.Component;
  */
 
 @Singleton
-@Component(modules={AppModule.class, NetModule.class})
-public interface NetComponent {
+@Component(modules={AppModule.class, DaggerTestModule.class})
+public interface DaggerComponent {
 	void inject(MainActivity activity);
 	// void inject(MyFragment fragment);
 	// void inject(MyService service);
