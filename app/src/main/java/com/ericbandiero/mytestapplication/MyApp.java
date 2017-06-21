@@ -9,25 +9,25 @@ import android.util.Log;
 
 public class MyApp extends Application {
 
-	private NetComponent mNetComponent;
+	private DaggerComponent mNetComponent;
 
 	@Override
 	public void onCreate() {
 		super.onCreate();
 		if (AppConstant.DEBUG) Log.d(this.getClass().getSimpleName()+">","Custom app object created...");
 		// Dagger%COMPONENT_NAME%
-		mNetComponent = DaggerNetComponent.builder()
+		mNetComponent = DaggerDaggerComponent.builder()
 				// list of modules that are part of this component need to be created here too
 				.appModule(new AppModule(this)) // This also corresponds to the name of your module: %component_name%Module
-				.netModule(new NetModule("Eric B."))
+				.daggerTestModule(new DaggerTestModule("Eric B."))
 				.build();
 
 		// If a Dagger 2 component does not have any constructor arguments for any of its modules,
 		// then we can use .create() as a shortcut instead:
-		//  mNetComponent = com.codepath.dagger.components.DaggerNetComponent.create();
+		//  mNetComponent = com.codepath.dagger.components.DaggerDaggerComponent.create();
 	}
 
-	public NetComponent getNetComponent() {
+	public DaggerComponent getNetComponent() {
 		return mNetComponent;
 	}
 }

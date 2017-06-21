@@ -72,6 +72,8 @@ public class MainActivity extends AppCompatActivity implements Serializable{
 		//InjectorClass.inject(this);
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
+
+		//Dagger inject
 		((MyApp) getApplication()).getNetComponent().inject(this);
 
 

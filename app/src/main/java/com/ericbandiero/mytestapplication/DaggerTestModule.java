@@ -14,12 +14,12 @@ import dagger.Provides;
  */
 
 @Module
-public class NetModule {
+public class DaggerTestModule {
 
 	String mBaseUrl;
 
 	// Constructor needs one parameter to instantiate.
-	public NetModule(String baseUrl) {
+	public DaggerTestModule(String baseUrl) {
 		this.mBaseUrl = baseUrl;
 	}
 
