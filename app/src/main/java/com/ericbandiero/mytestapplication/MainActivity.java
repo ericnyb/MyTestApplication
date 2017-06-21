@@ -31,11 +31,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
 
+import butterknife.BindColor;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 
 public class MainActivity extends AppCompatActivity implements Serializable{
 
 	Simple_ExpandableListAdapter listAdapter;
-	transient ExpandableListView expListView;
+	//transient ExpandableListView expListView;
 
 	List<String> listDataHeader;
 	HashMap<String, List<String>> listDataChild;
@@ -46,16 +51,28 @@ public class MainActivity extends AppCompatActivity implements Serializable{
 
 	Map<List<Lib_ExpandableDataWithIds>,HashMap<Lib_ExpandableDataWithIds, List<Lib_ExpandableDataWithIds>>> d;
 
+
+	//Butterknife
+	@BindView(R.id.lvExp) ExpandableListView expListView;
+	@BindView(R.id.fab) FloatingActionButton fab;
+//	@BindColor(R.color.Blue) int blue; // int or ColorStateList field
+
+
+
+
 	//Change in develop branch
 	//Change in master branch
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+		ButterKnife.bind(this);
+
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
 
-		FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+		/*
 		fab.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
@@ -63,10 +80,7 @@ public class MainActivity extends AppCompatActivity implements Serializable{
 						.setAction("Action", null).show();
 			}
 		});
-
-		// get the listview
-		expListView = (ExpandableListView) findViewById(R.id.lvExp);
-
+		*/
 /* String way
 		// preparing list data
 		prepareDataStrings();
@@ -114,6 +128,13 @@ if (AppConstant.DEBUG) Log.d(this.getClass().getSimpleName()+">","Child string:"
 		});
 
 	}
+
+	@OnClick(R.id.fab)
+	public void SnackBarNotification(View view) {
+		Snackbar.make(view, "Great, it works with Material Design", Snackbar.LENGTH_LONG)
+				.setAction("Action", null).show();
+	}
+
 
 	/*
 		Used with old way and with simple_expandlableListAdaptor
