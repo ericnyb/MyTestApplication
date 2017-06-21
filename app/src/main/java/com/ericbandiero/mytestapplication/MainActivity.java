@@ -2,6 +2,7 @@ package com.ericbandiero.mytestapplication;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -31,6 +32,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
 
+import javax.inject.Inject;
+
 import butterknife.BindColor;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -51,27 +54,26 @@ public class MainActivity extends AppCompatActivity implements Serializable{
 
 	Map<List<Lib_ExpandableDataWithIds>,HashMap<Lib_ExpandableDataWithIds, List<Lib_ExpandableDataWithIds>>> d;
 
+	@Inject
+	SharedPreferences sharedPreferences;
 
 	//Butterknife
 	@BindView(R.id.lvExp) ExpandableListView expListView;
 	@BindView(R.id.fab) FloatingActionButton fab;
-//	@BindColor(R.color.Blue) int blue; // int or ColorStateList field
 
-
-
-
-	//Change in develop branch
-	//Change in master branch
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
 		ButterKnife.bind(this);
-
+		//InjectorClass.inject(this);
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
+		((MyApp) getApplication()).getNetComponent().inject(this);
 
+
+		System.out.println("Shared preferences file:"+sharedPreferences.getClass().getName());
 		/*
 		fab.setOnClickListener(new View.OnClickListener() {
 			@Override
