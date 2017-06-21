@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity implements Serializable{
 	@Inject
 	SharedPreferences sharedPreferences;
 
+	@Inject MyDaggerObject myDaggerObject;
+
 	//Butterknife
 	@BindView(R.id.lvExp) ExpandableListView expListView;
 	@BindView(R.id.fab) FloatingActionButton fab;
@@ -74,6 +76,8 @@ public class MainActivity extends AppCompatActivity implements Serializable{
 
 
 		System.out.println("Shared preferences file:"+sharedPreferences.getClass().getName());
+		System.out.println("User name:"+myDaggerObject.getUserName());
+
 		/*
 		fab.setOnClickListener(new View.OnClickListener() {
 			@Override

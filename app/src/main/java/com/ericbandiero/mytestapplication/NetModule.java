@@ -30,4 +30,11 @@ public class NetModule {
 	SharedPreferences providesSharedPreferences(Application application) {
 		return PreferenceManager.getDefaultSharedPreferences(application);
 	}
+
+	@Provides
+	@Singleton
+	MyDaggerObject myDaggerObject(){
+		MyDaggerObject myDaggerObject=new MyDaggerObject(mBaseUrl);
+		return myDaggerObject;
+	}
 }

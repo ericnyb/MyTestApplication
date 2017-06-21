@@ -1,6 +1,7 @@
 package com.ericbandiero.mytestapplication;
 
 import android.app.Application;
+import android.util.Log;
 
 /**
  * Created by Eric Bandiero on 6/21/2017.
@@ -13,12 +14,12 @@ public class MyApp extends Application {
 	@Override
 	public void onCreate() {
 		super.onCreate();
-
+		if (AppConstant.DEBUG) Log.d(this.getClass().getSimpleName()+">","Custom app object created...");
 		// Dagger%COMPONENT_NAME%
 		mNetComponent = DaggerNetComponent.builder()
 				// list of modules that are part of this component need to be created here too
 				.appModule(new AppModule(this)) // This also corresponds to the name of your module: %component_name%Module
-				.netModule(new NetModule("https://api.github.com"))
+				.netModule(new NetModule("Eric B."))
 				.build();
 
 		// If a Dagger 2 component does not have any constructor arguments for any of its modules,
