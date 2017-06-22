@@ -13,5 +13,7 @@ import dagger.Component;
 public interface DaggerComponent {
 	void inject(MainActivity activity);
 	 void inject(Main2Activity activity);
+	//void inject(DependObject dependObject);
+
 	// void inject(MyService service);
 }

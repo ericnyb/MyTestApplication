@@ -27,6 +27,7 @@ public class Main2Activity extends AppCompatActivity {
 		((MyApp) getApplication()).getNetComponent().inject(this);
 
 		if (AppConstant.DEBUG) Log.d(this.getClass().getSimpleName()+">","Name in upper:"+myDaggerObject3.getUserName());
+		if (AppConstant.DEBUG) Log.d(this.getClass().getSimpleName()+">","Reverse name"+myDaggerObject3.reverseAName());
 //We should use this.
 		FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 		fab.setOnClickListener(new View.OnClickListener() {
