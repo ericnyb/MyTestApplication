@@ -1,6 +1,7 @@
 package com.ericbandiero.mytestapplication;
 
 import android.app.Activity;
+import android.app.Application;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements Serializable{
 
 	@Inject MyDaggerObject myDaggerObject;
 	@Inject MyDaggerObject2 myDaggerObject2;
-
+	@Inject Application app;
 
 
 
@@ -84,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements Serializable{
 		System.out.println("Shared preferences file:"+sharedPreferences.getClass().getName());
 		System.out.println("User name:"+myDaggerObject.getUserName());
 		System.out.println("User name:"+myDaggerObject2.getUserName());
+		System.out.println("App package:"+app.getPackageName().toString());
 
 		/*
 		fab.setOnClickListener(new View.OnClickListener() {
@@ -144,8 +146,14 @@ if (AppConstant.DEBUG) Log.d(this.getClass().getSimpleName()+">","Child string:"
 
 	@OnClick(R.id.fab)
 	public void SnackBarNotification(View view) {
+
+		/*
 		Snackbar.make(view, "Great, it works with Material Design", Snackbar.LENGTH_LONG)
 				.setAction("Action", null).show();
+		*/
+
+		Intent intent=new Intent(this,Main2Activity.class);
+		startActivity(intent);
 	}
 
 

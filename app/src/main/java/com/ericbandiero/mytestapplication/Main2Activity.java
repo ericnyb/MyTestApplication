@@ -1,27 +1,32 @@
 package com.ericbandiero.mytestapplication;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 
+import javax.inject.Inject;
+
 public class Main2Activity extends AppCompatActivity {
-	//We only need this.
-	//Change with no fast
-	//Change with fast forward
-	//Change and used merge commit
-	//T2 commit
-	//T2 change 2
-	//Fast merge because no change in master.
-	//Made change in master.
+
+	@Inject
+	MyDaggerObject3 myDaggerObject3;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main2);
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
+
+		//Dagger inject
+		((MyApp) getApplication()).getNetComponent().inject(this);
+
+		if (AppConstant.DEBUG) Log.d(this.getClass().getSimpleName()+">","Name in upper:"+myDaggerObject3.getUserName());
 //We should use this.
 		FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 		fab.setOnClickListener(new View.OnClickListener() {

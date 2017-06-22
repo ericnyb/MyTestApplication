@@ -48,4 +48,13 @@ public class DaggerTestModule {
 		MyDaggerObject2 myDaggerObject=new MyDaggerObject2(mBaseUrl);
 		return myDaggerObject;
 	}
+
+	@Provides
+	@Singleton
+	MyDaggerObject3 myDaggerObject3(){
+		//We can switch out an object here
+		//MyDaggerObject myDaggerObject=new MyDaggerObject(mBaseUrl);
+		MyDaggerObject3 myDaggerObject=new MyDaggerObject3(mBaseUrl);
+		return myDaggerObject;
+	}
 }
