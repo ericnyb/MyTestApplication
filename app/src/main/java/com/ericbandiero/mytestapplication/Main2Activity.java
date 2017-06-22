@@ -16,6 +16,9 @@ public class Main2Activity extends AppCompatActivity {
 	@Inject
 	MyDaggerObject3 myDaggerObject3;
 
+	@Inject
+	ObjectForNewModule objectForNewModule;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -32,6 +35,8 @@ public class Main2Activity extends AppCompatActivity {
 		DependObjectForDepend dependObjectForDepend = myDaggerObject3.dependObject.dependObjectForDepend;
 		DependsForDependsSub c=(DependsForDependsSub)dependObjectForDepend;
 		c.sayGoodby();
+
+		objectForNewModule.sayHola();
 
 //We should use this.
 		FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
