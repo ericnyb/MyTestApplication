@@ -6,12 +6,19 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import javax.inject.Inject;
+
 /**
  * Created by Eric Bandiero on 6/22/2017.
  */
 
 class DependObject {
-	public DependObject() {
+
+	DependObjectForDepend dependObjectForDepend;
+
+	@Inject
+	public DependObject(DependObjectForDepend dependObjectForDepend) {
+		this.dependObjectForDepend=dependObjectForDepend;
 		if (AppConstant.DEBUG) Log.d(this.getClass().getSimpleName()+">","Instantiated depend object");
 	}
 
@@ -24,6 +31,8 @@ class DependObject {
 
 		// reverse StringBuilder input1
 		input1 = input1.reverse();
+
+		dependObjectForDepend.doSomething();
 
 		return input1.toString();
 	}

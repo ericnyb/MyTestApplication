@@ -53,9 +53,27 @@ public class DaggerTestModule {
 
 	@Provides
 	@Singleton
+	DependObjectForDepend dependObjectForDepend(){
+		if (AppConstant.DEBUG) Log.d(new Object() { }.getClass().getEnclosingClass()+">","Creating depend object");
+		DependObjectForDepend dependObjectForDepend=new DependObjectForDepend();
+		return dependObjectForDepend;
+	}
+
+	//We used this subclass instead when creating DependObject
+	@Provides
+	@Singleton
+	DependsForDependsSub dependsForDependsSub(){
+		if (AppConstant.DEBUG) Log.d(new Object() { }.getClass().getEnclosingClass()+">","Creating depend object");
+		DependsForDependsSub dependObjectForDepend=new DependsForDependsSub();
+		return dependObjectForDepend;
+	}
+
+	@Provides
+	@Singleton
 	DependObject dependObject(){
 		if (AppConstant.DEBUG) Log.d(new Object() { }.getClass().getEnclosingClass()+">","Creating depend object");
-		DependObject dependObject=new DependObject();
+		//DependObject dependObject=new DependObject(dependObjectForDepend());
+		DependObject dependObject=new DependObject(dependsForDependsSub());
 		return dependObject;
 	}
 
