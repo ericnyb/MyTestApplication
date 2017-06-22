@@ -1,9 +1,17 @@
-package com.ericbandiero.mytestapplication;
+package com.ericbandiero.mytestapplication.dagger_modules;
 
 import android.app.Application;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
+
+import com.ericbandiero.mytestapplication.AppConstant;
+import com.ericbandiero.mytestapplication.DependObject;
+import com.ericbandiero.mytestapplication.DependObjectForDepend;
+import com.ericbandiero.mytestapplication.DependsForDependsSub;
+import com.ericbandiero.mytestapplication.class_objects.MyDaggerObject;
+import com.ericbandiero.mytestapplication.class_objects.MyDaggerObject2;
+import com.ericbandiero.mytestapplication.class_objects.MyDaggerObject3;
 
 import javax.inject.Singleton;
 

@@ -1,4 +1,4 @@
-package com.ericbandiero.mytestapplication;
+package com.ericbandiero.mytestapplication.dagger_modules;
 
 import android.app.Application;
 

@@ -12,9 +12,13 @@ import javax.inject.Inject;
  * Created by Eric Bandiero on 6/22/2017.
  */
 
-class DependObject {
+public class DependObject {
 
-	DependObjectForDepend dependObjectForDepend;
+	public DependObjectForDepend getDependObjectForDepend() {
+		return dependObjectForDepend;
+	}
+
+	private DependObjectForDepend dependObjectForDepend;
 
 	@Inject
 	public DependObject(DependObjectForDepend dependObjectForDepend) {

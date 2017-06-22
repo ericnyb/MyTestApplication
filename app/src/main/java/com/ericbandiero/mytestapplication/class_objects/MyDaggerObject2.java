@@ -1,4 +1,4 @@
-package com.ericbandiero.mytestapplication;
+package com.ericbandiero.mytestapplication.class_objects;
 
 /**
  * Created by Eric Bandiero on 6/21/2017.

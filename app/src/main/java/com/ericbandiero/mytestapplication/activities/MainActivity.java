@@ -1,6 +1,5 @@
-package com.ericbandiero.mytestapplication;
+package com.ericbandiero.mytestapplication.activities;
 
-import android.app.Activity;
 import android.app.Application;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -23,7 +22,10 @@ import com.ericbandiero.librarymain.adapters.Lib_ExpandableListAdapter_With_Ids;
 import com.ericbandiero.librarymain.data_classes.Lib_ExpandableDataWithIds;
 import com.ericbandiero.librarymain.*;
 import com.ericbandiero.librarymain.interfaces.IPrepDataExpandableList;
-
+import com.ericbandiero.mytestapplication.*;
+import com.ericbandiero.mytestapplication.R;
+import com.ericbandiero.mytestapplication.class_objects.MyDaggerObject;
+import com.ericbandiero.mytestapplication.class_objects.MyDaggerObject2;
 
 
 import java.io.Serializable;
@@ -31,11 +33,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.StringTokenizer;
 
 import javax.inject.Inject;
 
-import butterknife.BindColor;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -58,14 +58,16 @@ public class MainActivity extends AppCompatActivity implements Serializable{
 	@Inject
 	SharedPreferences sharedPreferences;
 
-	@Inject MyDaggerObject myDaggerObject;
-	@Inject MyDaggerObject2 myDaggerObject2;
+	@Inject
+	MyDaggerObject myDaggerObject;
+	@Inject
+	MyDaggerObject2 myDaggerObject2;
 	@Inject Application app;
 
 
 
 	//Butterknife
-	@BindView(R.id.lvExp) ExpandableListView expListView;
+	@BindView(com.ericbandiero.mytestapplication.R.id.lvExp) ExpandableListView expListView;
 	@BindView(R.id.fab) FloatingActionButton fab;
 
 	@Override
@@ -123,14 +125,14 @@ public class MainActivity extends AppCompatActivity implements Serializable{
 			@Override
 			public boolean onChildClick(ExpandableListView parent, View v,
 										int groupPosition, int childPosition, long id) {
-				if (AppConstant.DEBUG) Log.d(this.getClass().getSimpleName()+">","Clicked!");
+				if (com.ericbandiero.mytestapplication.AppConstant.DEBUG) Log.d(this.getClass().getSimpleName()+">","Clicked!");
 				String s = group.get(groupPosition).getTextStringGroup()
 						+ " : "
 						+ children.get(
 						group.get(groupPosition)).get(
 						childPosition).getTextStringChild().toString();
 
-if (AppConstant.DEBUG) Log.d(this.getClass().getSimpleName()+">","Child string:"+s);
+if (com.ericbandiero.mytestapplication.AppConstant.DEBUG) Log.d(this.getClass().getSimpleName()+">","Child string:"+s);
 
 				Toast.makeText(
 						getApplicationContext(),

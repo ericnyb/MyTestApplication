@@ -3,6 +3,11 @@ package com.ericbandiero.mytestapplication;
 import android.app.Application;
 import android.util.Log;
 
+import com.ericbandiero.mytestapplication.dagger_components.DaggerComponent;
+import com.ericbandiero.mytestapplication.dagger_components.DaggerDaggerComponent;
+import com.ericbandiero.mytestapplication.dagger_modules.AppModule;
+import com.ericbandiero.mytestapplication.dagger_modules.DaggerTestModule;
+
 /**
  * Created by Eric Bandiero on 6/21/2017.
  */
