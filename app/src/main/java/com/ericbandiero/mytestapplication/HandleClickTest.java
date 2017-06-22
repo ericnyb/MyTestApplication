@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.ericbandiero.librarymain.data_classes.Lib_ExpandableDataWithIds;
 import com.ericbandiero.librarymain.interfaces.IHandleChildClicksExpandableIds;
+import com.ericbandiero.mytestapplication.activities.Main2Activity;
 
 import java.io.Serializable;
 import java.util.ArrayList;

@@ -5,6 +5,6 @@ package com.ericbandiero.mytestapplication;
   * Pull request redo
  */
 
-class AppConstant {
+public class AppConstant {
 	public static final boolean DEBUG=true;
 }
